@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Уборка квартир, офисов и территорий в Екатеринбурге — Marafet</title>
+<meta name="description" content="Екатеринбург: уборка квартир, офисов и территорий. Калькулятор примерной цены по площади и онлайн-запись: тип уборки, день и время.">
+<meta name="keywords" content="уборка квартир Екатеринбург, уборка офисов, уборка территорий, клининг Екатеринбург, Marafet">
+<meta name="theme-color" content="#0e7490">
+<link rel="canonical" href="https://example.ru/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Marafet — уборка в Екатеринбурге">
+<meta property="og:description" content="Уборка квартир, офисов и территорий. Узнайте примерную цену и запишитесь онлайн.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Marafet",
+  "description": "Уборка квартир, офисов и территорий в Екатеринбурге.",
+  "telephone": "+79122195016",
+  "areaServed": { "@type": "City", "name": "Екатеринбург" },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Екатеринбург",
+    "addressRegion": "Свердловская область",
+    "addressCountry": "RU"
+  }
+}
+</script>
+<style>
+:root {
+  --ink: #0c1a20;
+  --muted: #4d6068;
+  --line: #d9e6ea;
+  --bg: #f3f8fa;
+  --card: #ffffff;
+  --accent: #0e7490;
+  --accent-hover: #155e75;
+  --accent-active: #164e63;
+  --accent-soft: #def1f6;
+  --fill: #fff1b8;
+  --radius: 12px;
+  --wrap: 1120px;
+  --header-h: 56px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--bg);
+  padding-bottom: 70px;
+}
+
+img { max-width: 100%; display: block; }
+h1, h2, h3, p, ul, ol, figure, blockquote, fieldset, output { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+fieldset { border: 0; padding: 0; min-width: 0; }
+a { color: inherit; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.fill { background: var(--fill); color: var(--ink); border-radius: 4px; padding: 0 4px; font-style: normal; }
+
+.skip { position: absolute; left: 12px; top: -60px; background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 8px; z-index: 100; transition: top .15s; }
+.skip:focus { top: 12px; }
+
+.wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 18px; }
+section { scroll-margin-top: var(--header-h); }
+.section { padding: 40px 0; }
+.section--white { background: var(--card); }
+
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+h1, h2, h3 { font-weight: 800; letter-spacing: -0.025em; line-height: 1.1; }
+h1 { font-size: clamp(2rem, 6.6vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 4.2vw, 2.2rem); }
+h3 { font-size: 1.1rem; line-height: 1.25; letter-spacing: -0.01em; }
+.section__head { max-width: 620px; margin-bottom: 22px; }
+.section__head p { margin-top: 8px; color: var(--muted); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 10px 22px;
+  border-radius: var(--radius); border: 2px solid var(--accent);
+  background: var(--accent); color: #fff;
+  font: inherit; font-weight: 700; text-decoration: none; text-align: center; cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s, transform .1s;
+}
+.btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn:active { background: var(--accent-active); border-color: var(--accent-active); transform: translateY(1px); }
+.btn--ghost { background: transparent; color: var(--accent); }
+.btn--ghost:hover { background: var(--accent-soft); color: var(--accent-hover); border-color: var(--accent-hover); }
+.btn--ghost:active { background: #c4e5ee; color: var(--accent-active); }
+.btn--light { background: #fff; color: var(--ink); border-color: #fff; }
+.btn--light:hover { background: var(--accent-soft); border-color: var(--accent-soft); }
+.btn--light:active { background: #c4e5ee; border-color: #c4e5ee; }
+.btn--outline-light { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+.btn--outline-light:hover { background: rgba(255,255,255,.14); border-color: #fff; }
+.btn--outline-light:active { background: rgba(255,255,255,.26); }
+.btn--block { width: 100%; }
+.on-dark :focus-visible { outline-color: #fff; }
+
+/* Demo */
+.demo-bar { background: var(--fill); color: var(--ink); text-align: center; font-size: .88rem; padding: 7px 18px; line-height: 1.35; }
+.demo-bar b { font-weight: 800; letter-spacing: .06em; }
+.demo-pill { display: inline-block; margin-left: 8px; padding: 1px 8px; border: 1.5px solid var(--accent); border-radius: 999px; font-size: .68rem; font-weight: 800; letter-spacing: .08em; color: var(--accent); vertical-align: middle; }
+
+/* Header */
+.header { position: sticky; top: 0; z-index: 50; background: rgba(243,248,250,.97); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); }
+.header__row { display: flex; align-items: center; justify-content: space-between; min-height: var(--header-h); gap: 16px; }
+.logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.03em; text-decoration: none; color: var(--ink); }
+.logo:hover { color: var(--accent); }
+.nav { display: flex; align-items: center; gap: 22px; }
+.nav a:not(.btn) { text-decoration: none; font-weight: 500; font-size: .94rem; padding: 6px 0; border-bottom: 2px solid transparent; transition: border-color .15s, color .15s; }
+.nav a:not(.btn):hover { color: var(--accent); border-bottom-color: var(--accent); }
+.nav a:not(.btn):active { color: var(--accent-active); }
+.nav .btn { min-height: 40px; padding: 6px 16px; }
+
+.menu-toggle { display: none; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; cursor: pointer; position: relative; transition: background .15s, border-color .15s; }
+.menu-toggle:hover { background: var(--accent-soft); border-color: var(--accent); }
+.menu-toggle:active { background: #c4e5ee; }
+.menu-toggle span, .menu-toggle span::before, .menu-toggle span::after { display: block; position: absolute; left: 11px; width: 20px; height: 2px; background: var(--ink); content: ""; transition: transform .2s, top .2s, background .2s; }
+.menu-toggle span { top: 20px; }
+.menu-toggle span::before { top: -6px; left: 0; }
+.menu-toggle span::after { top: 6px; left: 0; }
+.menu-toggle[aria-expanded="true"] span { background: transparent; }
+.menu-toggle[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
+
+@media (max-width: 859px) {
+  .js .menu-toggle { display: block; }
+  .js .nav { display: none; position: absolute; top: var(--header-h); left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 4px 18px 16px; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .js .nav.is-open { display: flex; }
+  .js .nav a:not(.btn) { padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 1rem; }
+  .js .nav .btn { margin-top: 12px; min-height: 48px; }
+  .no-js .nav { gap: 12px; flex-wrap: wrap; justify-content: flex-end; font-size: .9rem; }
+  .no-js .nav .btn { display: none; }
+}
+
+/* Chips (общие) */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; position: relative; }
+.chips input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.chips label {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 6px 14px;
+  border: 2px solid var(--line); border-radius: 10px; background: #fff;
+  font-weight: 500; font-size: .95rem; line-height: 1.2; cursor: pointer; user-select: none; text-align: center;
+  transition: border-color .15s, background .15s, color .15s;
+}
+.chips label:hover { border-color: var(--accent); color: var(--accent); }
+.chips label:active { background: var(--accent-soft); }
+.chips input:checked + label { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
+.chips input:checked + label:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: #fff; }
+.chips input:focus-visible + label { outline: 3px solid var(--ink); outline-offset: 2px; }
+.chips--3 label { flex: 1 1 0; min-width: 0; }
+.chips--days { flex-wrap: nowrap; overflow-x: auto; padding: 2px 2px 6px; margin: 0 -2px; scrollbar-width: thin; }
+.chips--days label { flex: 0 0 auto; flex-direction: column; align-items: flex-start; gap: 0; min-width: 86px; }
+.chips--days small { font-size: .74rem; opacity: .8; font-weight: 500; }
+
+.field { margin-bottom: 14px; }
+.field label.lbl, .field > legend { display: block; font-size: .82rem; font-weight: 700; margin-bottom: 6px; padding: 0; }
+.field label.lbl span, .field > legend span { color: var(--muted); font-weight: 400; }
+.input { width: 100%; min-height: 48px; padding: 10px 14px; border: 2px solid var(--line); border-radius: 10px; background: #fff; font: inherit; color: var(--ink); transition: border-color .15s, box-shadow .15s; }
+.input::placeholder { color: #84969d; }
+.input:hover { border-color: #bdd0d6; }
+.input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+
+/* Hero + калькулятор */
+.hero { padding: 26px 0 34px; }
+.hero__grid { display: grid; gap: 26px; }
+.hero__place { display: inline-block; font-size: .85rem; font-weight: 700; color: var(--accent); border: 1px solid var(--accent); padding: 3px 12px; border-radius: 999px; margin-bottom: 14px; }
+.hero h1 { max-width: 14ch; }
+.hero__lead { margin-top: 14px; font-size: 1.08rem; max-width: 30em; }
+.hero__marks { margin-top: 18px; display: grid; gap: 8px; }
+.hero__marks li { position: relative; padding-left: 26px; font-weight: 500; }
+.hero__marks li::before { content: ""; position: absolute; left: 4px; top: 5px; width: 7px; height: 12px; border: solid var(--accent); border-width: 0 3px 3px 0; transform: rotate(45deg); }
+.hero__cta { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+.calc { background: var(--card); border: 1px solid var(--line); border-top: 5px solid var(--accent); border-radius: 16px; padding: 20px 18px; box-shadow: 0 10px 30px rgba(12,26,32,.07); }
+.calc h2 { font-size: 1.3rem; }
+.calc__sub { margin: 4px 0 16px; color: var(--muted); font-size: .94rem; }
+.range-row { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; }
+.range-row input[type="range"] { width: 100%; height: 32px; accent-color: var(--accent); cursor: pointer; margin: 0; }
+.range-row output { min-width: 84px; text-align: right; font-weight: 800; font-size: 1.15rem; }
+.calc__res { margin: 6px 0 4px; padding: 14px 16px; background: var(--accent-soft); border-radius: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.calc__res span { font-size: .88rem; color: var(--accent-active); font-weight: 700; }
+.calc__res b { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; }
+.calc__note { margin: 8px 0 14px; font-size: .84rem; color: var(--muted); }
+.no-js .calc { display: none; }
+
+@media (min-width: 860px) {
+  .hero { padding: 52px 0 60px; }
+  .hero__grid { grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  .calc { padding: 26px 24px; }
+  .section { padding: 56px 0; }
+}
+
+/* Услуги */
+.price { border-top: 2px solid var(--ink); background: var(--card); }
+.price li { display: grid; grid-template-columns: 1fr auto; gap: 2px 14px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.price__val { font-weight: 800; font-size: 1.2rem; white-space: nowrap; }
+.price__val small { font-size: .8rem; font-weight: 500; color: var(--muted); margin-left: 4px; }
+.price p { grid-column: 1 / -1; color: var(--muted); font-size: .95rem; }
+.price__go { grid-column: 1 / -1; justify-self: start; margin-top: 4px; background: none; border: 0; padding: 4px 0; font: inherit; font-weight: 700; font-size: .92rem; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.price__go:hover { color: var(--accent-hover); }
+.price__go:active { color: var(--accent-active); }
+.price-note { margin-top: 12px; color: var(--muted); font-size: .94rem; }
+@media (min-width: 760px) {
+  .price li { grid-template-columns: 1.2fr 2fr auto auto; gap: 18px; align-items: center; }
+  .price p { grid-column: auto; }
+  .price__go { grid-column: auto; margin: 0; }
+}
+
+/* Портфолио */
+.port__tag { display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: var(--fill); padding: 2px 10px; border-radius: 999px; margin-bottom: 10px; }
+.port__text { max-width: 640px; }
+.port__text p { margin-top: 8px; color: var(--muted); }
+.strip { margin-top: 22px; display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; scrollbar-width: thin; }
+.strip__tile { flex: 0 0 72%; scroll-snap-align: start; aspect-ratio: 4 / 3; border-radius: 12px; border: 2px dashed #b3cbd3; background: repeating-linear-gradient(135deg, #eaf3f6 0 14px, #e1edf1 14px 28px); display: flex; align-items: center; justify-content: center; font-size: .86rem; font-weight: 500; color: var(--muted); }
+@media (min-width: 760px) { .strip__tile { flex-basis: calc(25% - 9px); } }
+
+/* Как работаем */
+.steps { counter-reset: s; display: grid; gap: 14px; }
+.step { counter-increment: s; border-top: 2px solid var(--ink); padding-top: 12px; }
+.step::before { content: "0" counter(s); display: block; font-size: 2rem; font-weight: 800; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent); margin-bottom: 8px; letter-spacing: -0.02em; }
+.step p { margin-top: 4px; color: var(--muted); font-size: .95rem; }
+@media (min-width: 600px) { .steps { grid-template-columns: repeat(2, 1fr); gap: 20px 24px; } }
+@media (min-width: 960px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+
+/* Отзывы */
+.rev { display: grid; gap: 14px; }
+.rev__score { background: var(--ink); color: #fff; border-radius: 14px; padding: 18px 20px; display: flex; align-items: center; gap: 16px; }
+.rev__score b { font-size: 3rem; font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+.rev__score p { font-size: .94rem; line-height: 1.35; }
+.rev__score a { display: inline-block; margin-top: 4px; font-weight: 700; color: #fff; text-underline-offset: 3px; }
+.rev__score a:hover { color: #8fd3e5; }
+.rev__score :focus-visible { outline-color: #fff; }
+.rev__quote { border: 2px dashed #b3cbd3; border-radius: 14px; padding: 18px 20px; background: var(--bg); }
+.rev__quote blockquote { font-size: 1.1rem; font-weight: 700; line-height: 1.35; }
+.rev__quote cite { display: block; margin-top: 8px; font-style: normal; font-size: .88rem; color: var(--muted); }
+@media (min-width: 860px) { .rev { grid-template-columns: 1fr 1.5fr; gap: 20px; } }
+
+/* FAQ */
+.faq-wrap { display: grid; gap: 8px; }
+.faq { border-top: 2px solid var(--ink); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; padding: 15px 40px 15px 0; font-weight: 700; line-height: 1.3; position: relative; transition: color .15s; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary:hover { color: var(--accent); }
+.faq summary:active { color: var(--accent-active); }
+.faq summary::after { content: "+"; position: absolute; right: 6px; top: 50%; transform: translateY(-50%); font-size: 1.6rem; font-weight: 500; color: var(--accent); line-height: 1; }
+.faq details[open] summary::after { content: "−"; }
+.faq .answer { padding: 0 0 15px; color: var(--muted); max-width: 40em; font-size: .96rem; }
+.faq .answer p + p { margin-top: 6px; }
+@media (min-width: 860px) {
+  .faq-wrap { grid-template-columns: 1fr 2fr; gap: 56px; align-items: start; }
+  .faq-wrap .section__head { position: sticky; top: calc(var(--header-h) + 24px); margin-bottom: 0; }
+}
+
+/* Запись */
+.booking { background: var(--ink); color: #fff; }
+.booking .eyebrow { color: #8fd3e5; }
+.booking__grid { display: grid; gap: 24px; }
+.booking__text { margin-top: 8px; color: #c9d8de; max-width: 30em; }
+.booking__phone { display: inline-block; margin-top: 14px; font-size: clamp(1.7rem, 6vw, 2.4rem); font-weight: 800; letter-spacing: -0.02em; text-decoration: none; color: #fff; border-bottom: 3px solid rgba(255,255,255,.35); transition: border-color .15s, color .15s; }
+.booking__phone:hover { border-bottom-color: #fff; }
+.booking__phone:active { color: #8fd3e5; }
+.booking__btns { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 420px; }
+.booking__btns .btn--wide { grid-column: 1 / -1; }
+
+.book { background: var(--card); color: var(--ink); border-radius: 16px; padding: 20px 18px; }
+.book :focus-visible { outline-color: var(--accent); }
+.book__top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.book h2, .done h2 { font-size: 1.3rem; }
+.book__step { font-size: .84rem; font-weight: 700; color: var(--muted); white-space: nowrap; }
+.progress { height: 6px; background: var(--line); border-radius: 3px; margin: 10px 0 16px; overflow: hidden; }
+.progress i { display: block; height: 100%; width: 33.3%; background: var(--accent); border-radius: 3px; transition: width .2s; }
+.pane > legend { display: block; width: 100%; font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; padding: 0; }
+.pane + .pane { margin-top: 18px; }
+.js .pane { display: none; }
+.js .pane.is-current { display: block; }
+.pane__sub { font-size: .8rem; font-weight: 700; margin: 16px 0 8px; }
+.pane__err { margin-top: 10px; color: #b42318; font-size: .9rem; font-weight: 500; }
+.consent { display: flex; gap: 10px; align-items: flex-start; font-size: .84rem; color: var(--muted); line-height: 1.4; }
+.consent input { width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--accent); flex: 0 0 auto; cursor: pointer; }
+.book__nav { display: flex; gap: 10px; margin-top: 18px; }
+.book__nav .btn { flex: 1; }
+.book__nav #prev { flex: 0 0 auto; }
+.no-js .book__nav { display: none; }
+.book__note { margin-top: 10px; font-size: .84rem; color: var(--muted); text-align: center; }
+.no-js .book form { display: none; }
+.js .book__nojs { display: none; }
+.book__nojs { padding: 12px 0; }
+
+.done { display: none; }
+.is-done form, .is-done .progress, .is-done .book__step { display: none; }
+.is-done .done { display: block; }
+.done__sum { margin: 12px 0 14px; padding: 12px 14px; background: var(--bg); border-radius: 10px; font-size: .94rem; line-height: 1.55; white-space: pre-line; }
+.done__btns { display: grid; gap: 8px; }
+.done__back { margin-top: 12px; background: none; border: 0; padding: 4px 0; font: inherit; color: var(--accent); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.done__back:hover { color: var(--accent-hover); }
+.done__hint { margin-top: 10px; font-size: .86rem; color: var(--muted); }
+
+@media (min-width: 860px) {
+  .booking__grid { grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .book { padding: 26px 24px; }
+}
+
+/* Footer */
+.footer { padding: 22px 0; background: #071116; color: #a9bcc3; font-size: .9rem; }
+.footer__row { display: grid; gap: 8px; }
+.footer .logo { color: #fff; }
+.footer a:not(.logo) { color: #fff; text-underline-offset: 3px; }
+.footer a:not(.logo):hover { color: #8fd3e5; }
+.footer :focus-visible { outline-color: #fff; }
+@media (min-width: 860px) { .footer__row { grid-template-columns: auto 1fr auto; align-items: center; gap: 32px; } }
+
+/* Нижняя панель на телефоне */
+.bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; grid-template-columns: 1fr 1.4fr; gap: 10px; padding: 8px 14px calc(8px + env(safe-area-inset-bottom)); background: var(--bg); border-top: 1px solid var(--line); }
+.bar .btn { min-height: 46px; padding: 8px 12px; }
+@media (min-width: 720px) { .bar { display: none; } body { padding-bottom: 0; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержимому</a>
+
+<div class="demo-bar" role="note"><b>DEMO SITE</b> — демонстрационная версия. Цены и тексты примерные.</div>
+
+<header class="header">
+  <div class="wrap header__row">
+    <a class="logo" href="#top" aria-label="Marafet — наверх">Marafet<span class="demo-pill">DEMO</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Открыть меню"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Основное меню">
+      <a href="#services">Услуги и цены</a>
+      <a href="#portfolio">Портфолио</a>
+      <a href="#process">Как работаем</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#faq">Вопросы</a>
+      <a class="btn" href="tel:+79122195016" data-tel>Позвонить</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO + КАЛЬКУЛЯТОР -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="hero__place">Екатеринбург · по предварительной записи</p>
+        <h1 id="hero-title">Уборка квартир, офисов и территорий</h1>
+        <p class="hero__lead">Узнайте примерную цену за минуту и запишитесь онлайн. Заявки принимаем с 09:00.</p>
+        <ul class="hero__marks">
+          <li>Цена по площади, без звонков и ожидания</li>
+          <li>Запись: тип уборки, день и время</li>
+          <li>Подтверждаем время по телефону или в мессенджере</li>
+        </ul>
+        <div class="hero__cta">
+          <a class="btn" href="#booking">Записаться онлайн</a>
+          <a class="btn btn--ghost" href="tel:+79122195016" data-tel>Позвонить</a>
+        </div>
+      </div>
+
+      <div class="calc" aria-labelledby="calc-title">
+        <h2 id="calc-title">Сколько это стоит</h2>
+        <p class="calc__sub">Выберите тип уборки и площадь.</p>
+        <fieldset class="field">
+          <legend>Что убираем</legend>
+          <div class="chips chips--3" id="calc-types">
+            <input type="radio" name="calc-type" id="c1" value="kv" checked><label for="c1">Квартиру</label>
+            <input type="radio" name="calc-type" id="c2" value="of"><label for="c2">Офис</label>
+            <input type="radio" name="calc-type" id="c3" value="ter"><label for="c3">Территорию</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label class="lbl" for="area">Площадь</label>
+          <div class="range-row">
+            <input type="range" id="area" min="20" max="300" step="5" value="60">
+            <output id="area-out" for="area">60 м²</output>
+          </div>
+        </div>
+        <div class="calc__res">
+          <span>Примерная цена</span>
+          <b id="calc-price" aria-live="polite">от 7 200 ₽</b>
+        </div>
+        <p class="calc__note">Это демо-расчёт. Точную цену назовём после осмотра.</p>
+        <button class="btn btn--block" type="button" id="calc-go">Записаться на эту уборку</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- УСЛУГИ -->
+  <section class="section section--white" id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Услуги и цены</p>
+        <h2 id="services-title">Что убираем и сколько стоит</h2>
+        <p>Это примерные цены для демо. Настоящие впишем по вашему прайсу.</p>
+      </div>
+      <!-- Примерные цены. Должны совпадать со ставками RATES в скрипте. Замените на реальные. -->
+      <ul class="price">
+        <li>
+          <h3>Уборка квартир</h3>
+          <p>Квартиры и дома. Цена зависит от площади и загрязнения.</p>
+          <div class="price__val"><span class="fill">от 120 ₽</span><small>за м²</small></div>
+          <button class="price__go" type="button" data-pick="s1">Записаться</button>
+        </li>
+        <li>
+          <h3>Уборка офисов</h3>
+          <p>Офисные помещения. Цена зависит от площади и графика.</p>
+          <div class="price__val"><span class="fill">от 100 ₽</span><small>за м²</small></div>
+          <button class="price__go" type="button" data-pick="s2">Записаться</button>
+        </li>
+        <li>
+          <h3>Уборка территорий</h3>
+          <p>Дворы и прилегающие территории. Цена зависит от площади.</p>
+          <div class="price__val"><span class="fill">от 40 ₽</span><small>за м²</small></div>
+          <button class="price__go" type="button" data-pick="s3">Записаться</button>
+        </li>
+      </ul>
+      <p class="price-note">Цены примерные. Точную сумму называем после осмотра.</p>
+    </div>
+  </section>
+
+  <!-- ПОРТФОЛИО -->
+  <section class="section" id="portfolio" aria-labelledby="portfolio-title">
+    <div class="wrap">
+      <div class="port__text">
+        <p class="port__tag">Можно добавить</p>
+        <h2 id="portfolio-title">Портфолио ваших работ</h2>
+        <p>На 2ГИС у вас 23 фото, и видят их только там. Добавим лучшие на сайт с подписями.</p>
+        <p>Ниже пример: так будет выглядеть лента работ.</p>
+      </div>
+      <div class="strip" aria-hidden="true">
+        <div class="strip__tile">Фото работы</div>
+        <div class="strip__tile">Фото работы</div>
+        <div class="strip__tile">Фото работы</div>
+        <div class="strip__tile">Фото работы</div>
+        <div class="strip__tile">Фото работы</div>
+        <div class="strip__tile">Фото работы</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАК РАБОТАЕМ -->
+  <section class="section section--white" id="process" aria-labelledby="process-title">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Как работаем</p>
+        <h2 id="process-title">Четыре шага от записи до результата</h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <h3>Вы записываетесь</h3>
+          <p>Онлайн или по телефону. Указываете тип уборки и площадь.</p>
+        </li>
+        <li class="step">
+          <h3>Мы подтверждаем</h3>
+          <p>Звоним или пишем, уточняем адрес и детали.</p>
+        </li>
+        <li class="step">
+          <h3>Приезжаем и смотрим</h3>
+          <p>Осматриваем объект. Называем цену до начала работы.</p>
+        </li>
+        <li class="step">
+          <h3>Убираем</h3>
+          <p>Вы принимаете результат и оплачиваете.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ОТЗЫВЫ -->
+  <section class="section" id="reviews" aria-labelledby="reviews-title">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Отзывы</p>
+        <h2 id="reviews-title">Что говорят клиенты</h2>
+      </div>
+      <div class="rev">
+        <div class="rev__score">
+          <b>4,5</b>
+          <p>Оценка на 2ГИС.<br><a href="https://2gis.ru/ekaterinburg/firm/70000001061849772" target="_blank" rel="noopener">Все отзывы на 2ГИС</a></p>
+        </div>
+        <!-- Вставьте реальный отзыв с 2ГИС -->
+        <figure class="rev__quote">
+          <blockquote>«<span class="fill">Текст отзыва клиента</span>»</blockquote>
+          <figcaption><cite>Отзыв клиента на 2ГИС</cite></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ВОПРОСЫ -->
+  <section class="section section--white" id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq-wrap">
+      <div class="section__head">
+        <p class="eyebrow">Вопросы</p>
+        <h2 id="faq-title">Отвечаем честно</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Как считается цена?</summary>
+          <div class="answer">
+            <p>По площади и степени загрязнения. На сайте цены «от».</p>
+            <p>Точную сумму называем после осмотра, до начала работы.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Сколько времени занимает уборка?</summary>
+          <div class="answer">
+            <p>Зависит от площади и загрязнения. Срок называем при подтверждении записи.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Как оплатить?</summary>
+          <div class="answer">
+            <p><span class="fill">Наличными или переводом.</span> Цену называем до начала работы.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Куда вы выезжаете?</summary>
+          <div class="answer">
+            <p>По Екатеринбургу.</p>
+            <p>Нужна уборка за городом? Позвоните, скажем, сможем ли приехать.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Как перенести или отменить запись?</summary>
+          <div class="answer">
+            <p>Позвоните или напишите в мессенджер. Подберём другое время.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЗАПИСЬ -->
+  <section class="section booking on-dark" id="booking" aria-labelledby="booking-title">
+    <div class="wrap booking__grid">
+      <div>
+        <p class="eyebrow">Запись</p>
+        <h2 id="booking-title">Запишитесь на уборку</h2>
+        <p class="booking__text">Заполните форму или свяжитесь с нами удобным способом. Заявки принимаем с 09:00.</p>
+        <a class="booking__phone" href="tel:+79122195016" data-tel><span data-phone-text>+7 912 219-50-16</span></a>
+        <div class="booking__btns">
+          <a class="btn btn--light btn--wide" href="tel:+79122195016" data-tel>Позвонить</a>
+          <a class="btn btn--outline-light" href="https://wa.me/79122195016" data-wa target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn--outline-light" href="https://t.me/ElenaMarafet" target="_blank" rel="noopener">Telegram</a>
+          <a class="btn btn--outline-light btn--wide" href="https://vk.ru/club212223765" target="_blank" rel="noopener">ВКонтакте</a>
+        </div>
+      </div>
+
+      <div class="book" id="book" aria-labelledby="book-title2">
+        <div class="book__top">
+          <h2 id="book-title2">Онлайн-запись</h2>
+          <p class="book__step" id="step-label" aria-live="polite">Шаг 1 из 3</p>
+        </div>
+        <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+
+        <p class="book__nojs">Включите JavaScript в браузере или позвоните: <a href="tel:+79122195016" data-tel><span data-phone-text>+7 912 219-50-16</span></a>.</p>
+
+        <form id="book-form" novalidate>
+          <fieldset class="pane is-current" data-err="Выберите, что убираем.">
+            <legend>Что убираем?</legend>
+            <div class="chips chips--3">
+              <input type="radio" name="service" id="s1" value="Уборка квартиры" required><label for="s1">Квартиру</label>
+              <input type="radio" name="service" id="s2" value="Уборка офиса"><label for="s2">Офис</label>
+              <input type="radio" name="service" id="s3" value="Уборка территории"><label for="s3">Территорию</label>
+            </div>
+            <p class="pane__err" role="alert" hidden></p>
+            <div class="field" style="margin-top:16px">
+              <label class="lbl" for="f-area">Площадь, м² <span>(если не знаете — оставьте пустым)</span></label>
+              <input class="input" id="f-area" name="area" type="number" inputmode="numeric" min="1" max="100000" placeholder="Например: 55">
+            </div>
+          </fieldset>
+
+          <fieldset class="pane" data-err="Выберите день и время.">
+            <legend>Когда приехать?</legend>
+            <div class="chips chips--days" id="days"></div>
+            <p class="pane__sub">Время</p>
+            <!-- Окна времени примерные. Замените на реальные. -->
+            <div class="chips" id="times">
+              <input type="radio" name="time" id="t1" value="утро, 9–12" required><label for="t1">Утро 9–12</label>
+              <input type="radio" name="time" id="t2" value="день, 12–16"><label for="t2">День 12–16</label>
+              <input type="radio" name="time" id="t3" value="вечер, 16–20"><label for="t3">Вечер 16–20</label>
+              <input type="radio" name="time" id="t4" value="любое время"><label for="t4">Любое время</label>
+            </div>
+            <p class="pane__err" role="alert" hidden></p>
+          </fieldset>
+
+          <fieldset class="pane">
+            <legend>Куда ехать и как связаться?</legend>
+            <div class="field">
+              <label class="lbl" for="f-addr">Адрес <span>(улица и дом)</span></label>
+              <input class="input" id="f-addr" name="address" type="text" autocomplete="street-address" placeholder="Например: Ленина, 10" required>
+            </div>
+            <div class="field">
+              <label class="lbl" for="f-name">Ваше имя</label>
+              <input class="input" id="f-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" required>
+            </div>
+            <div class="field">
+              <label class="lbl" for="f-phone">Телефон</label>
+              <input class="input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 900 000-00-00" pattern="[0-9+()\s\-]{10,18}" required>
+            </div>
+            <div class="field">
+              <label class="lbl" for="f-note">Что важно учесть <span>(по желанию)</span></label>
+              <input class="input" id="f-note" name="note" type="text" placeholder="Например: есть домашние животные">
+            </div>
+            <label class="consent">
+              <input type="checkbox" id="f-consent" required>
+              <span>Согласен на обработку персональных данных для связи по заявке.</span>
+            </label>
+          </fieldset>
+
+          <div class="book__nav">
+            <button class="btn btn--ghost" type="button" id="prev" hidden>Назад</button>
+            <button class="btn" type="button" id="next">Далее</button>
+            <button class="btn" type="submit" id="submit" hidden>Записаться</button>
+          </div>
+          <p class="book__note">Запись ни к чему не обязывает. Подтвердим время сами.</p>
+        </form>
+
+        <div class="done" id="done" aria-live="polite">
+          <h2>Заявка готова</h2>
+          <p class="done__sum" id="done-sum"></p>
+          <div class="done__btns">
+            <a class="btn" id="send-wa" href="https://wa.me/79122195016" data-wa target="_blank" rel="noopener">Отправить в WhatsApp</a>
+            <button class="btn btn--ghost" id="send-tg" type="button">Скопировать и открыть Telegram</button>
+            <a class="btn btn--ghost" href="tel:+79122195016" data-tel>Позвонить</a>
+          </div>
+          <p class="done__hint" id="done-hint">Нажмите кнопку, чтобы заявка дошла до менеджера.</p>
+          <button class="done__back" id="back" type="button">Изменить заявку</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__row">
+    <a class="logo" href="#top">Marafet</a>
+    <p>Уборка квартир, офисов и территорий. Екатеринбург.</p>
+    <p><a href="https://2gis.ru/ekaterinburg/firm/70000001061849772" target="_blank" rel="noopener">Мы на 2ГИС</a> · © 2026</p>
+  </div>
+</footer>
+
+<div class="bar" role="region" aria-label="Быстрая связь">
+  <a class="btn btn--ghost" href="tel:+79122195016" data-tel>Позвонить</a>
+  <a class="btn" href="#booking">Записаться онлайн</a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* Номер: по префиксу 912 219 и ссылке WhatsApp. Проверьте перед публикацией.
+     Второй номер WhatsApp на 2ГИС: 79049805700. */
+  var PHONE_DIGITS = '79122195016';
+  var TELEGRAM_LINK = 'https://t.me/ElenaMarafet';
+
+  /* Ставки для калькулятора, ₽ за м². Должны совпадать с ценами в разделе «Услуги». */
+  var RATES = {
+    kv:  { name: 'Квартира',   rate: 120, min: 20,  max: 300,  step: 5,  def: 60,  radio: 's1' },
+    of:  { name: 'Офис',       rate: 100, min: 20,  max: 500,  step: 5,  def: 100, radio: 's2' },
+    ter: { name: 'Территория', rate: 40,  min: 100, max: 2000, step: 50, def: 500, radio: 's3' }
+  };
+
+  /* Куда отправлять заявки. Пока пусто — заявка уходит через WhatsApp/Telegram.
+     Чтобы заявки приходили сами: вставьте адрес формы (Formspree, Make, свой сервер),
+     он получит POST с JSON. */
+  var FORM_ENDPOINT = '';
+
+  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+  function each(sel, fn) { Array.prototype.forEach.call(document.querySelectorAll(sel), fn); }
+  function $(id) { return document.getElementById(id); }
+  function money(n) { return n.toLocaleString('ru-RU').replace(/ /g, ' '); }
+
+  /* Контакты */
+  if (/^7\d{10}$/.test(PHONE_DIGITS)) {
+    var d = PHONE_DIGITS;
+    var pretty = '+7 ' + d.slice(1, 4) + ' ' + d.slice(4, 7) + '-' + d.slice(7, 9) + '-' + d.slice(9, 11);
+    each('[data-tel]', function (el) { el.setAttribute('href', 'tel:+' + d); });
+    each('[data-phone-text]', function (el) { el.textContent = pretty; });
+    each('[data-wa]', function (el) { el.setAttribute('href', 'https://wa.me/' + d); });
+  }
+
+  /* Мобильное меню */
+  var toggle = document.querySelector('.menu-toggle');
+  var nav = $('nav');
+  function setMenu(open) {
+    nav.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+  }
+  toggle.addEventListener('click', function () { setMenu(toggle.getAttribute('aria-expanded') !== 'true'); });
+  nav.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { setMenu(false); toggle.focus(); }
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth >= 860) setMenu(false); });
+
+  /* Плавная прокрутка */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function goTo(el) { el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); }
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    var id = link.getAttribute('href').slice(1);
+    var target = id ? $(id) : document.body;
+    if (!target) return;
+    e.preventDefault();
+    goTo(target);
+    if (history.replaceState) history.replaceState(null, '', id ? '#' + id : location.pathname);
+  });
+
+  /* Калькулятор */
+  var area = $('area'), areaOut = $('area-out'), priceOut = $('calc-price');
+  function calcType() {
+    var r = document.querySelector('input[name="calc-type"]:checked');
+    return RATES[r ? r.value : 'kv'];
+  }
+  function recalc() {
+    var t = calcType();
+    var a = Number(area.value);
+    areaOut.textContent = a + ' м²';
+    priceOut.textContent = 'от ' + money(a * t.rate) + ' ₽';
+  }
+  each('input[name="calc-type"]', function (r) {
+    r.addEventListener('change', function () {
+      var t = calcType();
+      area.min = t.min; area.max = t.max; area.step = t.step; area.value = t.def;
+      recalc();
+    });
+  });
+  area.addEventListener('input', recalc);
+  recalc();
+
+  /* Дни для записи: сегодня и ещё шесть */
+  var days = $('days');
+  var now = new Date();
+  for (var i = 0; i < 7; i++) {
+    var dt = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+    var top = i === 0 ? 'Сегодня' : i === 1 ? 'Завтра' : dt.toLocaleDateString('ru-RU', { weekday: 'short' });
+    var sub = dt.toLocaleDateString('ru-RU', { day: 'numeric', month: 'short' });
+    var value = dt.toLocaleDateString('ru-RU', { weekday: 'long', day: 'numeric', month: 'long' });
+    var input = document.createElement('input');
+    input.type = 'radio'; input.name = 'day'; input.id = 'd' + i; input.value = value;
+    if (i === 0) input.required = true;
+    var label = document.createElement('label');
+    label.htmlFor = input.id;
+    label.innerHTML = '<span>' + top + '</span><small>' + sub + '</small>';
+    days.appendChild(input);
+    days.appendChild(label);
+  }
+
+  /* Пошаговая форма */
+  var form = $('book-form');
+  var card = $('book');
+  var panes = Array.prototype.slice.call(form.querySelectorAll('.pane'));
+  var prev = $('prev'), next = $('next'), submitBtn = $('submit');
+  var stepLabel = $('step-label'), bar = $('bar');
+  var cur = 0;
+
+  function show(i) {
+    cur = i;
+    panes.forEach(function (p, k) {
+      p.classList.toggle('is-current', k === i);
+      var err = p.querySelector('.pane__err');
+      if (err) err.hidden = true;
+    });
+    stepLabel.textContent = 'Шаг ' + (i + 1) + ' из ' + panes.length;
+    bar.style.width = ((i + 1) / panes.length * 100) + '%';
+    prev.hidden = i === 0;
+    next.hidden = i === panes.length - 1;
+    submitBtn.hidden = i !== panes.length - 1;
+  }
+
+  function firstInvalid(i) {
+    var inputs = panes[i].querySelectorAll('input');
+    for (var k = 0; k < inputs.length; k++) {
+      if (!inputs[k].checkValidity()) return inputs[k];
+    }
+    return null;
+  }
+
+  function validatePane(i) {
+    var bad = firstInvalid(i);
+    if (!bad) return true;
+    if (bad.type === 'radio') {
+      var err = panes[i].querySelector('.pane__err');
+      if (err) { err.textContent = panes[i].getAttribute('data-err') || 'Выберите вариант.'; err.hidden = false; }
+    } else {
+      bad.reportValidity();
+    }
+    return false;
+  }
+
+  prev.addEventListener('click', function () { if (cur > 0) show(cur - 1); });
+  next.addEventListener('click', function () { if (validatePane(cur)) show(cur + 1); });
+  form.addEventListener('change', function (e) {
+    var p = e.target.closest('.pane');
+    var err = p && p.querySelector('.pane__err');
+    if (err) err.hidden = true;
+  });
+
+  function showForm() { card.classList.remove('is-done'); }
+
+  /* Выбор типа уборки из прайса */
+  each('[data-pick]', function (btn) {
+    btn.addEventListener('click', function () {
+      var r = $(btn.getAttribute('data-pick'));
+      if (r) r.checked = true;
+      showForm();
+      show(0);
+      goTo($('booking'));
+    });
+  });
+
+  /* Кнопка калькулятора переносит тип и площадь в запись */
+  $('calc-go').addEventListener('click', function () {
+    var t = calcType();
+    var r = $(t.radio);
+    if (r) r.checked = true;
+    $('f-area').value = area.value;
+    showForm();
+    show(1);
+    goTo($('booking'));
+  });
+
+  /* Отправка записи */
+  var lastText = '';
+
+  function buildText(data) {
+    var lines = ['Заявка на уборку', 'Что убираем: ' + data.service];
+    if (data.area) lines.push('Площадь: ' + data.area + ' м²');
+    lines.push('День: ' + data.day);
+    lines.push('Время: ' + data.time);
+    lines.push('Адрес: ' + data.address);
+    if (data.note) lines.push('Важно: ' + data.note);
+    lines.push('Имя: ' + data.name);
+    lines.push('Телефон: ' + data.phone);
+    return lines.join('\n');
+  }
+
+  function showDone(text, sent) {
+    lastText = text;
+    $('done-sum').textContent = text;
+    $('send-wa').setAttribute('href', 'https://wa.me/' + PHONE_DIGITS + '?text=' + encodeURIComponent(text));
+    $('done').querySelector('h2').textContent = sent ? 'Заявка отправлена' : 'Заявка готова';
+    $('done-hint').textContent = sent
+      ? 'Мы свяжемся с вами и подтвердим время.'
+      : 'Нажмите кнопку, чтобы заявка дошла до менеджера.';
+    $('send-wa').hidden = sent;
+    $('send-tg').hidden = sent;
+    card.classList.add('is-done');
+    goTo($('booking'));
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    for (var i = 0; i < panes.length; i++) {
+      if (firstInvalid(i)) { show(i); validatePane(i); return; }
+    }
+    var fd = new FormData(form);
+    var data = {
+      service: fd.get('service'),
+      area: String(fd.get('area') || '').trim(),
+      day: fd.get('day'),
+      time: fd.get('time'),
+      name: String(fd.get('name') || '').trim(),
+      phone: String(fd.get('phone') || '').trim(),
+      address: String(fd.get('address') || '').trim(),
+      note: String(fd.get('note') || '').trim()
+    };
+    var text = buildText(data);
+
+    if (FORM_ENDPOINT) {
+      submitBtn.disabled = true;
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (r) {
+        if (!r.ok) throw new Error('bad status');
+        showDone(text, true);
+        form.reset();
+        show(0);
+      }).catch(function () {
+        showDone(text, false);
+        $('done-hint').textContent = 'Не удалось отправить заявку автоматически. Отправьте её в мессенджер или позвоните.';
+      }).then(function () { submitBtn.disabled = false; });
+    } else {
+      showDone(text, false);
+    }
+  });
+
+  $('send-tg').addEventListener('click', function () {
+    var hint = $('done-hint');
+    function open() { window.open(TELEGRAM_LINK, '_blank', 'noopener'); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(lastText).then(function () {
+        hint.textContent = 'Текст скопирован. Вставьте его в чат с менеджером.';
+        open();
+      }, function () {
+        hint.textContent = 'Скопируйте текст заявки вручную и вставьте в чат.';
+        open();
+      });
+    } else {
+      hint.textContent = 'Скопируйте текст заявки вручную и вставьте в чат.';
+      open();
+    }
+  });
+
+  $('back').addEventListener('click', function () { showForm(); show(0); });
+
+  show(0);
+})();
+</script>
+</body>
+</html>
